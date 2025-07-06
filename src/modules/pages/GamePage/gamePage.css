@@ -1,0 +1,148 @@
+.game {
+  background-image: url("/bg/sand.png");
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.game-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+
+  h1 {
+    font-size: 56px;
+  }
+}
+
+.game-start__players {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+}
+
+.game-window {
+  padding: 50px;
+}
+
+.game-window__player {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+}
+
+.game-window__player-balls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 390px;
+  flex-wrap: wrap;
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.game-window__player-balls:nth-child(1) {
+  justify-content: end;
+}
+
+.game-window__player-balls:nth-child(2) {
+  justify-content: start;
+}
+
+.game__score {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active-player {
+  box-shadow: inset 0 0px 20px rgba(255, 0, 0, 0.4);
+}
+
+.active-ball {
+  border: 1px solid #ff0000;
+  cursor: pointer;
+}
+
+.game__control {
+  position: absolute;
+  right: 20px;
+  top: 210px;
+  z-index: 1;
+}
+
+.warning-player {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.game__form {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.game__parity {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block: 10px;
+  padding-left: 10px
+}
+
+.game__approve {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game__notifications {
+  position: absolute;
+  left: 20px;
+  top: 210px;
+}
+
+.warning-bot {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.game__visualization {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: -webkit-fill-available;
+  
+  img {
+    width: 50%;
+    height: fit-content;
+  }
+}

@@ -1,0 +1,19 @@
+.rules {
+  padding: 50px;
+}
+
+.rules__title, ul li {
+  color: white;
+}
+
+.rules__title{
+  margin: 50px;
+}
+
+.rules__list {
+  list-style-type: decimal;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 50px;
+}

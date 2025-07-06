@@ -1,0 +1,57 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.home__img {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+.home__buttons {
+  display: flex;
+  gap: 30px;
+
+  a {
+    background-color: black;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 50px;
+      height: 50px;
+      transition: all 0.3s ease;
+    }
+
+    p {
+      color: white;
+      font-size: 20px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover p {
+      opacity: 1;
+      color: #ff00cc;
+    }
+  }
+
+  .home__buttons-write:hover img {
+    content: url("/icons/home/write-author-pink.svg");
+  }
+
+  .home__buttons-play:hover img {
+    content: url("/icons/home/play-pink.svg");
+  }
+
+  .home__buttons-rules:hover img {
+    content: url("/icons/home/rules-pink.svg");
+  }
+}
