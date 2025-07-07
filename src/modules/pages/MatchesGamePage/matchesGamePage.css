@@ -1,0 +1,174 @@
+.matches {
+  background-image: url("/bg/table.png");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.matches__player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.matches__bot--view,
+.matches__player--view {
+  width: 500px;
+}
+
+.matches__bot--view1 {
+  height: 250px;
+  width: 700px;
+}
+
+.matches__player--bot {
+  img:nth-child(1) {
+    position: relative;
+    left: 100px;
+    top: -100px;
+  } 
+}
+.matches__player--player {
+  img:nth-child(2) {
+    position: absolute;
+    right: 100px;
+  }
+}
+
+.matches__pile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.matches__pile--pile {
+  z-index: 3;
+}
+
+.matches__pile--platform {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 0;
+}
+
+.matches__pile--amount {
+  position: absolute;
+  bottom: 100px;
+  right: 160px;
+  transform: rotate(12deg);
+}
+
+.matches__order {
+  color: white;
+  text-align: center;
+}
+@keyframes blinkBackground {
+  0% {
+    background-color: #d1d1d1;
+    opacity: 0.6;
+  }
+  50% {
+    background-color: #d1d1d1;
+    opacity: 1;
+  }
+  100% {
+    background-color: #d1d1d1;
+    opacity: 0.6;
+  }
+}
+
+@keyframes blinkBackgroundGreen {
+  0% {
+    background-color: #2fc224;
+    opacity: 0.6;
+  }
+  50% {
+    background-color: #2fc224;
+    opacity: 1;
+  }
+  100% {
+    background-color: #2fc224;
+    opacity: 0.6;
+  }
+}
+
+.matches__order--choose,
+.matches__order--player-choose {
+  position: relative;
+  cursor: pointer;
+}
+
+.matches__order--choose img {
+  filter: none;
+  position: relative;
+  z-index: 1;
+}
+
+.matches__order--choose::before,
+.matches__order--player-choose::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 500px;
+  height: 379px;
+  border-radius: 12px;
+  filter: blur(8px);
+  animation: blinkBackground 1s infinite ease-in-out;
+  z-index: 0;
+}
+
+.matches__order--choose::before {
+  left: 0;
+}
+
+.matches__order--player-choose::before {
+  left: 100px;
+  height: 250px;
+}
+
+/* При hover змінюємо анімацію на зелену */
+.matches__order--choose:hover::before,
+.matches__order--player-choose:hover::before {
+  animation-name: blinkBackgroundGreen;
+}
+
+/* Для позиціонування картинки */
+.matches__order--choose .matches__bot--view {
+  position: relative;
+  left: -100px;
+  z-index: 1;
+}
+
+.matches__center {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.matches__rules {
+  width: 50%;
+  .rules__title {
+    margin: 0px 50px;
+  }
+  ul {
+    margin: 10px 50px;
+  }
+}
+
+.matches__warning {
+  color: white;
+  margin-left: 30px;
+}

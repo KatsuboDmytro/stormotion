@@ -5,7 +5,17 @@ export const RulesPage = () => {
   return (
     <div className="rules">
       <Back />
-      <h1 className="rules__title">Rules</h1>
+      <h1 className="rules__title">Rules "Matches"</h1>
+      <ul className="rules__list">
+        <li>Participants are divided into pairs.</li>
+        <li>
+          From the pile of 25 matches, each player takes either 1, 2 or 3
+          matches on each turn.
+        </li>
+        <li>The game is over once all matches are taken.</li>
+        <li>Whoever has the even amount of matches wins.</li>
+      </ul>
+      <h1 className="rules__title">Rules "Even or odd"</h1>
       <ul className="rules__list">
         <li>Participants are divided into pairs.</li>
         <li>Each player receives 10 marbles.</li>

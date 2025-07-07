@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 
 import { App } from "./App";
-import { BallsGamePage, HomePage, RulesPage } from "./modules";
+import { BallsGamePage, HomePage, MatchesGamePage, RulesPage } from "./modules";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +17,10 @@ const router = createBrowserRouter([
         path: "/balls",
         element: <BallsGamePage />,
       },
-      // {
-      //   path: "/matches",
-      //   element: <MatchesGamePage />,
-      // },
+      {
+        path: "/matches",
+        element: <MatchesGamePage />,
+      },
       {
         path: "/rules",
         element: <RulesPage />,

@@ -1,5 +1,6 @@
 export * from "./pages/HomePage/HomePage";
 export * from "./pages/BallsGamePage/BallsGamePage";
+export * from "./pages/MatchesGamePage/MatchesGamePage";
 export * from "./pages/RulesPage/RulesPage";
 
 export * from "./pages/BallsGamePage/components/ChooseOrder/ChooseOrder";
