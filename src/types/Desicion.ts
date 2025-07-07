@@ -1,11 +1,11 @@
 export type PlayerDesicion = {
   balls: number[];
-  parity: "парна" | "непарна" | "";
+  parity: "even" | "odd" | "";
 };
 
 export type BotDesicion = {
   balls: number;
-  parity: "парна" | "непарна" | "";
+  parity: "even" | "odd" | "";
 };
 
 export type GetBotDecisionProps = {
@@ -15,7 +15,7 @@ export type GetBotDecisionProps = {
   setBotDecision: React.Dispatch<
     React.SetStateAction<{
       balls: number;
-      parity: "" | "парна" | "непарна";
+      parity: "" | "even" | "odd";
     }>
   >;
   setIsLoading: (loading: boolean) => void;

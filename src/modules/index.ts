@@ -1,10 +1,10 @@
 export * from "./pages/HomePage/HomePage";
-export * from "./pages/GamePage/GamePage";
+export * from "./pages/BallsGamePage/BallsGamePage";
 export * from "./pages/RulesPage/RulesPage";
 
-export * from "./pages/GamePage/components/ChooseOrder/ChooseOrder";
-export * from "./pages/GamePage/components/Visualization/Visualization";
-export * from "./pages/GamePage/components/ScoreBar/ScoreBar";
-export * from "./pages/GamePage/components/Decision/Decision";
+export * from "./pages/BallsGamePage/components/ChooseOrder/ChooseOrder";
+export * from "./pages/BallsGamePage/components/Visualization/Visualization";
+export * from "./pages/BallsGamePage/components/ScoreBar/ScoreBar";
+export * from "./pages/BallsGamePage/components/Decision/Decision";
 
 export * from "./components/Back/Back";

@@ -7,29 +7,31 @@ export const RulesPage = () => {
       <Back />
       <h1 className="rules__title">Rules</h1>
       <ul className="rules__list">
-        <li>Учасники діляться на пари.</li>
-        <li>Кожен гравець отримує по 10 кульок (шариків).</li>
+        <li>Participants are divided into pairs.</li>
+        <li>Each player receives 10 marbles.</li>
         <li>
-          Гравці по черзі вибирають, скільки кульок покласти в руку — від 1 до
-          10.
+          Players take turns choosing how many marbles to put in their hand —
+          from 1 to 10.
         </li>
-        <li>Гравець, який загадує, каже «парне» або «непарне».</li>
+        <li>The player who guesses says “even” or “odd.”</li>
         <li>
-          Потім обидва гравці одночасно показують свою руку з певною кількістю
-          кульок.
-        </li>
-        <li>
-          Якщо сума кульок обох гравців відповідає вгаданому (парна чи непарна),
-          то гравець, який вгадав, забирає у суперника кількість кульок скільки він поставив.
+          Then both players simultaneously show their hand with a certain number
+          of marbles.
         </li>
         <li>
-          Якщо ж ні — програє той, хто вгадав неправильно, і віддає кульки.
+          If the sum of the marbles of both players matches the guess (even or
+          odd), then the player who guessed takes from the opponent the number
+          of marbles he put in.
         </li>
         <li>
-          Гра продовжується, доки один з гравців не збере всі кульки або не
-          залишиться без них.
+          If not, the one who guessed incorrectly loses and gives away the
+          marbles.
         </li>
-        <li>Переможець — той, хто збере всі кульки.</li>
+        <li>
+          The game continues until one of the players collects all the marbles
+          or is left without them.
+        </li>
+        <li>The winner is the one who collects all the balls.</li>
       </ul>
     </div>
   );

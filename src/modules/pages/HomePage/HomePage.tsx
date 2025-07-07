@@ -12,7 +12,7 @@ export const HomePage = () => {
           <img src="/icons/home/write-author.svg" alt="write-author button" />
           <p>Write</p>
         </a>
-        <Link to={"/game"} className="home__buttons-play">
+        <Link to={"/balls"} className="home__buttons-play">
           <img src="/icons/home/play.svg" alt="to play button" />
           <p>Play</p>
         </Link>

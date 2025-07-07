@@ -1,4 +1,4 @@
-import type { PlayerDesicion, BotDesicion } from "../types/Desicion";
+import type { BotDesicion, PlayerDesicion } from "../types/Desicion";
 import type { Order } from "../types/Order";
 
 export type CountBallsParams = {
@@ -33,10 +33,10 @@ export function countBallsLogic({
 
   if (order === "player") {
     if (
-      (totalBalls % 2 === 0 && playerDecision.parity === "парна") ||
-      (totalBalls % 2 !== 0 && playerDecision.parity === "непарна")
+      (totalBalls % 2 === 0 && playerDecision.parity === "even") ||
+      (totalBalls % 2 !== 0 && playerDecision.parity === "odd")
     ) {
-      // гравець вгадав
+      // player wins
       nextPlayerAmount += botStakes;
       nextBotAmount -= botStakes;
       winner = "player";
@@ -47,8 +47,8 @@ export function countBallsLogic({
     }
   } else {
     if (
-      (totalBalls % 2 === 0 && botDecision.parity === "парна") ||
-      (totalBalls % 2 !== 0 && botDecision.parity === "непарна")
+      (totalBalls % 2 === 0 && botDecision.parity === "even") ||
+      (totalBalls % 2 !== 0 && botDecision.parity === "odd")
     ) {
       nextBotAmount += playerStakes;
       nextPlayerAmount -= playerStakes;

@@ -1,6 +1,13 @@
 /// <reference types="vite/client" />
 import { GoogleGenerativeAI } from "@google/generative-ai";
+
+
+
 import type { GetBotDecisionProps } from "../types/Desicion";
+
+
+
+
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -33,25 +40,25 @@ export const getBotDecision = async ({
   setIsLoading(true);
   const response = await AIChatSession.sendMessage(
     order === "player"
-      ? `Ти береш участь у грі "Парні чи непарні" проти твого найзапеклішого ворога. 
-    У тебе зараз ${playerAmountOfBall} кульок, а у суперника — ${botsAmountOfBall} кульок. 
-    Ти повинен вибрати кількість кульок, які поставиш (від 1 до ${playerAmountOfBall}). 
-    Подумай стратегічно:
-    - ніколи не став всі свої кульки, бо тебе вб'ють;
-    - якщо у тебе менше кульок, ризикуй більшою ставкою;
-    - якщо у тебе більше кульок, став менше, щоб захистити свою перевагу;
-    - вибирай парність так, щоб зменшити шанси ворога виграти.
-    Напиши ВИКЛЮЧНО у форматі: кількість кульок.
-  `
-      : `Ти потрапив у справжню "Гру в Кальмара". У тебе залишилось ${botsAmountOfBall} кульок, а в гравця 456 — ${playerAmountOfBall} кульок. 
-    Ти маєш обрати кількість кульок, які поставиш (від 1 до ${botsAmountOfBall}) та вказати, чи буде сума ваших кульок парною чи непарною. 
-    Подумай стратегічно: 
-    - ніколи не став всі свої кульки, бо тебе вб'ють;
-    - якщо у тебе більше кульок, ризикуй мінімально, щоб зберегти перевагу; 
-    - якщо у тебе менше кульок, став більше, щоб відігратись;
-    - вибирай парність так, щоб ускладнити гравцеві вгадування.
-    Напиши ВИКЛЮЧНО у форматі: кількість кульок, парна/непарна.
-  `,
+      ? `You are playing Odd or Even against your worst enemy.
+    You currently have ${botsAmountOfBall} balls, and your opponent has ${playerAmountOfBall} balls.
+    You must choose the number of balls you will bet (from 1 to ${botsAmountOfBall}).
+    Think strategically:
+    - never bet all your balls, because you will be killed;
+    - if you have fewer balls, risk a larger bet;
+    - if you have more balls, bet less to protect your advantage;
+    - choose the evenness so as to reduce the enemy's chances of winning.
+    Write EXCLUSIVELY in the format: number of balls.
+    `
+      : `You are in a real Squid Game. You have ${botsAmountOfBall} balls left, and player 456 has ${playerAmountOfBall} balls.
+    You have to choose the number of balls you will bet (from 1 to ${botsAmountOfBall}) and indicate whether the sum of your balls will be even or odd.
+    Think strategically:
+    - never bet all your balls, because you will be killed;
+    - if you have more balls, take minimal risks to maintain an advantage;
+    - if you have fewer balls, bet more to win back;
+    - choose the evenness so that it is difficult for the player to guess.
+    Write EXCLUSIVELY in the format: number of balls, even/odd.
+    `,
   );
 
   const text = response.response.text().trim();
@@ -60,15 +67,13 @@ export const getBotDecision = async ({
   let amount = parseInt(parts[0]);
 
   if (isNaN(amount) || amount < 1 || amount > botsAmountOfBall) {
-    amount = 1;
-    console.warn(
-      `BOT ставить некоректну кількість кульок, виправлено на ${amount}`,
-    );
+    amount = 0;
+    console.warn(`BOT puts the incorrect number of balls, fixed on ${amount}`);
   }
 
   setBotDecision({
     balls: amount,
-    parity: parts[1] as "" | "парна" | "непарна",
+    parity: parts[1] as "" | "even" | "odd",
   });
   setIsLoading(false);
 };

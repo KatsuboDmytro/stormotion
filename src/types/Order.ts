@@ -1,2 +1,2 @@
 export type Order = "bot" | "player" | "";
-export type Parity = "парна" | "непарна";
+export type Parity = "even" | "odd";

@@ -5,9 +5,9 @@ import type { BotDesicion, PlayerDesicion } from "../../../types/Desicion";
 import type { Order } from "../../../types/Order";
 import { countBallsLogic } from "../../../utils/gameLogic";
 import { ChooseOrder, Decision, ScoreBar, Visualization } from "../../index";
-import "./gamePage.css";
+import "./ballsGamePage.css";
 
-export const GamePage = () => {
+export const BallsGamePage = () => {
   const [botsAmountOfBall, setBotsAmountOfBall] = useState(10);
   const [playerAmountOfBall, setPlayersAmountOfBall] = useState(10);
 
@@ -129,8 +129,8 @@ export const GamePage = () => {
   const checkGameOver = useCallback(() => {
     if (botsAmountOfBall <= 0 || playerAmountOfBall <= 0) {
       alert(`
-        Гра закінчилась!
-        Гравець 456 ${playerAmountOfBall <= 0 ? "програв" : "виграв"}!
+        Game over!
+        Player 465 ${playerAmountOfBall <= 0 ? "lost" : "won"}!
       `);
 
       setBotsAmountOfBall(10);
@@ -171,20 +171,20 @@ export const GamePage = () => {
                 playersDecision.balls.length > 0 &&
                 showResult && (
                   <p className="warning-bot">
-                    Думаю, що сума кульок <b>{botDecision.parity}</b>
+                    I think the sum of the balls is <b>{botDecision.parity}</b>
                   </p>
                 )}
             </div>
             <div className="game__control">
               {showWarning && order === "player" && (
                 <p className="warning-player">
-                  Твоя черга! Ти можеш обрати кількість кульок натиснувши на
-                  них.
+                  It's your turn! You can choose the number of balls by clicking
+                  on them.
                 </p>
               )}
               {botDecision.balls > 0 && playersDecision.balls.length !== 0 && (
                 <button className="game__approve" onClick={handleContinue}>
-                  Далі
+                  Continue
                 </button>
               )}
               <Decision

@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 
 import { App } from "./App";
-import { GamePage, HomePage, RulesPage } from "./modules";
+import { BallsGamePage, HomePage, RulesPage } from "./modules";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +14,13 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/game",
-        element: <GamePage />,
+        path: "/balls",
+        element: <BallsGamePage />,
       },
+      // {
+      //   path: "/matches",
+      //   element: <MatchesGamePage />,
+      // },
       {
         path: "/rules",
         element: <RulesPage />,

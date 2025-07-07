@@ -1,13 +1,7 @@
 import React from "react";
 
-
-
 import type { PlayerDesicion } from "../../../../../types/Desicion";
 import type { Order, Parity } from "../../../../../types/Order";
-
-
-
-
 
 type DecisionProps = {
   playersDecision: PlayerDesicion;
@@ -38,29 +32,31 @@ export const Decision: React.FC<DecisionProps> = ({
         onSubmit={handleApproveAmount}
         className="game__form"
       >
-        <p>Ставлю {playersDecision.balls.length} шт. та загадую, що сума:</p>
+        <p>
+          I bet {playersDecision.balls.length} pieces and guess that the sum is:
+        </p>
         <p className="game__parity">
           <label>
             <input
               type="radio"
               name="parity"
-              value="парна"
+              value="even"
               required
-              checked={playersDecision.parity === "парна"}
+              checked={playersDecision.parity === "even"}
               onChange={handleParityChoose}
             />
-            Парна
+            Even
           </label>
           <label>
             <input
               type="radio"
               name="parity"
-              value="непарна"
+              value="odd"
               required
-              checked={playersDecision.parity === "непарна"}
+              checked={playersDecision.parity === "odd"}
               onChange={handleParityChoose}
             />
-            Непарна
+            Odd
           </label>
         </p>
         <button
@@ -68,7 +64,7 @@ export const Decision: React.FC<DecisionProps> = ({
           type="submit"
           disabled={playersDecision.balls.length === 0}
         >
-          Підтвердити
+          Submit
         </button>
       </form>
     );
