@@ -21,19 +21,19 @@ export const Visualization: React.FC<VisualizationProps> = ({
   return (
     <div className="game__visualization">
       {!showResult || isLoading ? (
-        <img src="/players/001-wait-arm.png" alt="001-wait-arm" />
+        <img src="players/001-wait-arm.png" alt="001-wait-arm" />
       ) : (
         <img
-          src={`/players/001-balls-${botDecision.balls}.png`}
+          src={`players/001-balls-${botDecision.balls}.png`}
           alt={`001-balls-${botDecision.balls}`}
         />
       )}
 
       {!showResult || isLoading ? (
-        <img src="/players/456-wait-arm.png" alt="456-wait-arm" />
+        <img src="players/456-wait-arm.png" alt="456-wait-arm" />
       ) : (
         <img
-          src={`/players/456-balls-${playersDecision.balls.length}.png`}
+          src={`players/456-balls-${playersDecision.balls.length}.png`}
           alt={`456-balls-${playersDecision.balls.length}`}
         />
       )}

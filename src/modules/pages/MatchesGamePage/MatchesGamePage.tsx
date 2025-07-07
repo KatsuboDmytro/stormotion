@@ -8,7 +8,7 @@ export const MatchesGamePage = () => {
   return (
     <section className="matches">
       <article className="matches__player matches__player--bot">
-        <img src="/items/treasure-bot.png" alt="treasure-war-fog" />
+        <img src="items/treasure-bot.png" alt="treasure-war-fog" />
         <div
           className={`matches__bot--view1 ${order === "" ? "matches__order--player-choose" : ""}`}
           onClick={() => {
@@ -17,7 +17,7 @@ export const MatchesGamePage = () => {
           }}
         >
           <img
-            src="/players/matches-bot.png"
+            src="players/matches-bot.png"
             alt="matches-bot"
             className="matches__bot--view"
           />
@@ -50,7 +50,7 @@ export const MatchesGamePage = () => {
             }}
           >
             <img
-              src="/items/pile.png"
+              src="items/pile.png"
               alt="pile"
               className="matches__pile--pile"
             />
@@ -60,7 +60,7 @@ export const MatchesGamePage = () => {
                 bottom: showPlatform ? "-44px" : "0px",
               }}
             >
-              <img src="/items/gift-platform.png" alt="gift-platform" />
+              <img src="items/gift-platform.png" alt="gift-platform" />
             </div>
           </div>
           {order === "player" && (
@@ -79,12 +79,12 @@ export const MatchesGamePage = () => {
           }}
         >
           <img
-            src="/players/matches-player.png"
+            src="players/matches-player.png"
             alt="matches-player"
             className="matches__player--view"
           />
         </div>
-        <img src="/items/treasure-player.png" alt="treasure-war-fog" />
+        <img src="items/treasure-player.png" alt="treasure-war-fog" />
         <div className="matches__pile--amount">
           {Array.from({ length: playerMatches }).map((_, index) => (
             <span key={index}>🔥</span>

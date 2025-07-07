@@ -22,7 +22,7 @@ export const ScoreBar: React.FC<ScoreBarProps> = ({
     <article className="game-window__player">
       {player === "001" && (
         <img
-          src={`/players/${player}.png`}
+          src={`players/${player}.png`}
           alt={`player ${player}`}
           className={order === "bot" ? "active-player" : ""}
         />
@@ -31,7 +31,7 @@ export const ScoreBar: React.FC<ScoreBarProps> = ({
         {Array.from({ length: amountOfBalls }, (_, i) => (
           <img
             key={i}
-            src="/players/ball.png"
+            src="players/ball.png"
             alt={`ball ${i + 1}`}
             className={`game-window__player-ball ${player === "456" && playersDecision?.balls.includes(i) ? "active-ball" : ""}`}
             onClick={handleChooseBall}
@@ -40,7 +40,7 @@ export const ScoreBar: React.FC<ScoreBarProps> = ({
       </div>
       {player === "456" && (
         <img
-          src={`/players/${player}.png`}
+          src={`players/${player}.png`}
           alt={`player ${player}`}
           className={order === "player" ? "active-player" : ""}
         />
